@@ -64,7 +64,7 @@ export default function ShowList({
   const [showTags, setShowTags] = useState(_showTags);
 
   return (
-    <div className={`${colorClass} rounded-lg bg-slate-100 p-2`}>
+    <div className={`rounded-lg bg-slate-100 p-2`}>
       <Header title={title} seeMoreLink={seeMoreLink} />
       {description ? <p>{description}</p> : null}
       <TagCheckbox
