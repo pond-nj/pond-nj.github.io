@@ -110,11 +110,13 @@ export default function ShowList({
                     )}
                   </div>
 
-                  {l.links
-                    ? l.links.map((link) => {
-                        return <A link={link.url} des={link.show} />;
-                      })
-                    : null}
+                  <div className="flex flex-row space-x-1">
+                    {l.links
+                      ? l.links.map((link) => {
+                          return <A link={link.url} des={link.show} />;
+                        })
+                      : null}
+                  </div>
                 </div>
               </Card>
             );

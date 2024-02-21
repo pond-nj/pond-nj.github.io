@@ -1,5 +1,5 @@
 import ShowList from "../Components/ShowList/ShowList";
-import { GithubLogo } from "@phosphor-icons/react";
+import { GithubLogo, ProjectorScreenChart } from "@phosphor-icons/react";
 import Header from "./Header";
 import AboutMe from "./AboutMe";
 
@@ -9,8 +9,7 @@ export default function Home() {
     {
       title:
         "Gold Medal and 2nd Runner-up: Thailand Mathematics Olympiad (TMO)",
-      image:
-        "https://lh3.googleusercontent.com/proxy/h_JkX_GU5PYuTTm--vfjochw2KNhXoB9cJ5fmaCY1ZQIevWfw7WzcoSf2XIR5xg-R9Q1cpzyqPY1nLz-TVmQ",
+      image: "https://i.ibb.co/kSVN9pQ/unnamed.png",
       subtitle:
         "Acheiving a gold medal in National Math Olympiad is no joke. I still can't believe I did it. The year was 2019, 16th TMO.",
       links: [
@@ -89,6 +88,56 @@ export default function Home() {
       tags: {
         type: ["System"],
         language: ["Java"],
+      },
+    },
+    {
+      title: "Mobile Queue App",
+      image: "",
+      subtitle:
+        "Realtime Mobile Queue App to connect service providers and customers. Done as a part of a hackathon competition.",
+      description:
+        "As a team of six, we proposed an idea that connect customers and service providers. We see this as a solution to onsite queing and customer management. I specialized in mobile app development and shop side webapp.",
+      links: [
+        {
+          url: "https://drive.google.com/file/d/1onWqQY2bcv9LW94Fl4W4oD_YmLhtYRj7/view?usp=drive_link",
+          show: (
+            <div className="flex flex-row items-center">
+              <ProjectorScreenChart weight="fill" />
+              <span>Proposal</span>
+            </div>
+          ),
+        },
+        {
+          url: "https://github.com/Maneemala2013/QueueApp",
+          show: (
+            <div className="flex flex-row items-center">
+              <GithubLogo weight="fill" />
+              <span>Mobile App</span>
+            </div>
+          ),
+        },
+        {
+          url: "https://github.com/Maneemala2013/QueueApp_Backend",
+          show: (
+            <div className="flex flex-row items-center">
+              <GithubLogo weight="fill" />
+              <span>Backend</span>
+            </div>
+          ),
+        },
+        {
+          url: "https://github.com/pond-nj/QueueApp_Backend_UI",
+          show: (
+            <div className="flex flex-row items-center">
+              <GithubLogo weight="fill" />
+              <span>Shop side Webapp</span>
+            </div>
+          ),
+        },
+      ],
+      tags: {
+        type: ["Mobile", "Web"],
+        language: ["React", "React-Native"],
       },
     },
     {
