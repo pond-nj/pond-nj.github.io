@@ -1,7 +1,16 @@
 import ShowList from "../Components/ShowList/ShowList";
-import { GithubLogo, ProjectorScreenChart } from "@phosphor-icons/react";
+import {
+  Certificate,
+  Exam,
+  GithubLogo,
+  Medal,
+  Paperclip,
+  ProjectorScreenChart,
+  Scroll,
+  ShoppingCart,
+  Users,
+} from "@phosphor-icons/react";
 import Header from "./Header";
-import AboutMe from "./AboutMe";
 
 export default function Home() {
   const acheivementList = [
@@ -15,18 +24,61 @@ export default function Home() {
       links: [
         {
           url: "https://artofproblemsolving.com/community/c879638_2019_thailand_mathematical_olympiad",
-          show: "Problem link",
+          show: (
+            <div className="flex flex-row items-center">
+              <Paperclip />
+              <span>Problem Link</span>
+            </div>
+          ),
         },
       ],
       description:
         "Around 100 High School students are selected across the nation to compete. And I came out ranking 3rd. At that time I could only solve Problem 1, 2, 3, 6, 7, 8 with full score each. My affinity was Geometry > Algebra > Number Theory > Combinatorics. After the MO, I coached the high school team for a few years and then left the MO field.",
+    },
+    {
+      title: "Engineering Dean's List and CSE's Department Award",
+      image: "https://img.hotimg.com/IMG_0791322f2575eefa4906.jpeg",
+      fullImage: "https://img.hotimg.com/IMG_0791.jpeg",
+      description:
+        "I obtained Dean's List for 2 consecutive years (2021/22) and CSE's Department Silver Award for 2022-23.",
+      links: [
+        {
+          url: "https://drive.google.com/file/d/1qAkoIeb16vgeD2lF08Unu7bm5JCzsEdR/view?usp=sharing",
+          show: (
+            <div className="flex flex-row items-center">
+              <Certificate />
+              <span>Dean's List</span>
+            </div>
+          ),
+        },
+        {
+          url: "https://www.cse.cuhk.edu.hk/academics/scholarships/",
+          show: (
+            <div className="flex flex-row items-center">
+              <Medal />
+              <span>Silver Award</span>
+            </div>
+          ),
+        },
+      ],
     },
   ];
 
   const HobbyList = [
     {
       title: "Trail Running",
-      description: "Coming soon!",
+      image: "https://img.hotimg.com/6b07a974-b560-4a7e-8ec0-426de32dd59c.jpeg",
+      fullImage:
+        "https://img.hotimg.com/6b07a974-b560-4a7e-8ec0-426de32dd59c.jpeg",
+      description:
+        "Completed a 100km trail in 37 hours. The even is called oxfam trailwalking and was held on 24 Nov 2023.",
+    },
+    {
+      title: "Half Marathon",
+      image: "https://img.hotimg.com/IMG_3813.jpeg",
+      fullImage: "https://img.hotimg.com/IMG_3813.jpeg",
+      description:
+        "Completed half marathon in 1 hr 56 mins. Aim to do better in the future. The event was Standard Chartered Hong Kong Marathon 2024.",
     },
   ];
 
@@ -147,6 +199,83 @@ export default function Home() {
     },
   ];
 
+  const jobList = [
+    {
+      title: "Research Intern at Huawei Research Centre",
+      image: "https://img.hotimg.com/IMG_7763.jpeg",
+      fullImage: "https://img.hotimg.com/IMG_7763.jpeg",
+      subtitle:
+        "Interned at Huawei Research Centre. Involved with pushing the Pareto frontier of Size-Area graph in adder modules.",
+      description:
+        "Implemented and empirically tested a theoretical fanout-bounded logic synthesis algorithm on adder modules. Suggested a tweak of the algorithm to increase the efficiency",
+      links: [
+        {
+          url: "https://doi.org/10.23919/DATE56975.2023.10137314",
+          show: (
+            <div className="flex flex-row items-center">
+              <Scroll weight="fill" />
+              <span>Related paper</span>
+            </div>
+          ),
+        },
+      ],
+      tags: {
+        industries: ["Processor"],
+        type: ["Research"],
+        language: ["C++"],
+      },
+    },
+    {
+      title: "Research Assistant on Learned Indexing for String",
+      image: "https://img.hotimg.com/IMG_6392.jpeg",
+      fullImage: "https://img.hotimg.com/IMG_6392.jpeg",
+      subtitle:
+        "Teamed up with an MPhil and an undergraduate student at CUHK to accelerate state-of-the-art string indexing algorithm.",
+      description:
+        "Analysed strings characteristic and affinity to learned indices.",
+      links: [
+        {
+          url: "https://appsrv.cse.cuhk.edu.hk/~ericlo/",
+          show: (
+            <div className="flex flex-row items-center">
+              <Users weight="fill" />
+              <span>Our Supervisor</span>
+            </div>
+          ),
+        },
+      ],
+      tags: {
+        industries: ["Database"],
+        type: ["Research"],
+        language: ["C++"],
+      },
+    },
+    {
+      title: "Full Stack Developer at NFT Investment & Venture Limited",
+      image: "https://img.hotimg.com/IMG_1945.jpeg",
+      fullImage: "https://img.hotimg.com/IMG_1945.jpeg",
+      subtitle: "Assisted in developing NFT trading platform",
+      description:
+        "Involved in developing and deploying NFT marketplace and NFT Art Design Tool. Tech stack heavily involved were Laravel-PHP, React, Web3.js, IPFS, and a Payment Gateway.",
+      links: [
+        {
+          url: "https://marketplace.naffiti.com/",
+          show: (
+            <div className="flex flex-row items-center">
+              <ShoppingCart weight="fill" />
+              <span>Launched Marketplace</span>
+            </div>
+          ),
+        },
+      ],
+      tags: {
+        industries: ["NFT"],
+        type: ["Developer"],
+        language: ["PHP", "React"],
+      },
+    },
+  ];
+
   return (
     <div className="">
       <div className="w-screen h-screen flex flex-col p-4 space-y-4">
@@ -155,20 +284,24 @@ export default function Home() {
 
         <div className="flex flex-col space-y-4">
           <ShowList
-            title={"I'm proud of this!"}
-            list={acheivementList}
-            colorClass={"bg-teal-100"}
+            title={"Work Experiences"}
+            list={jobList}
+            colorClass={"bg-red-100"}
+            show
           />
           <ShowList
             title={"I code these!"}
             list={projectList}
             colorClass={"bg-violet-200"}
+            show
           />
           <ShowList
-            title={"Hobby"}
-            list={HobbyList}
-            colorClass={"bg-blue-200"}
+            title={"I'm proud of this!"}
+            list={acheivementList}
+            colorClass={"bg-teal-100"}
+            show
           />
+
           <ShowList
             title={"Scholarship"}
             list={scholarshipList}
@@ -177,6 +310,12 @@ export default function Home() {
             }
             gridClassName="grid grid-cols-3 gap-1"
             colorClass={"bg-pink-100"}
+          />
+          <ShowList
+            title={"Hobby"}
+            list={HobbyList}
+            colorClass={"bg-blue-200"}
+            show
           />
         </div>
       </div>

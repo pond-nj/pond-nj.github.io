@@ -1,10 +1,13 @@
 import { useState } from "react";
 
-export function ToggleDiv({ children, title }) {
-  const [showToggle, setShowToggle] = useState(false);
+export function ToggleDiv({ children, title = "", show = false }) {
+  const [showToggle, setShowToggle] = useState(show);
   return (
-    <div onClick={() => setShowToggle(!showToggle)} className="cursor-pointer">
-      <div className="flex flex-row">
+    <div>
+      <div
+        className="flex flex-row cursor-pointer"
+        onClick={() => setShowToggle(!showToggle)}
+      >
         <div>
           <div
             className={`${showToggle ? "rotate-90" : ""} linear duration-100`}

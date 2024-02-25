@@ -1,14 +1,14 @@
-import Image from "../Components/Image";
+import ClickableImage from "../Components/Images/ClickableImage";
+import Image from "../Components/Images/Image";
 import { H3 } from "../Components/Title";
 
 export default function Header() {
   return (
     <header className="flex flex-row space-x-2 rounded-lg">
       <div>
-        <Image
-          src={
-            "https://media.licdn.com/dms/image/D5603AQGKpaP1wx9xJQ/profile-displayphoto-shrink_800_800/0/1705721383852?e=1710979200&v=beta&t=8BlXwrLads7ShrmeiZZMaphP2n1jFfhih5bmjH_YWWw"
-          }
+        <ClickableImage
+          src={"https://i.ibb.co/tD1TChN/IMG-8426.jpg"}
+          fullSrc={"https://img.hotimg.com/IMG_8426.jpeg"}
           className="h-40 w-40 rounded-lg"
           alt="logo"
         />
