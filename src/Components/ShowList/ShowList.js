@@ -116,7 +116,9 @@ export default function ShowList({
                   <div className="flex-1 flex flex-col">
                     <div className="flex flex-row space-x-4">
                       <H3 className="inline">{l.title}</H3>
-                      <TagList tags={l.tags} colorClass={colorClass} />
+                      <div>
+                        <TagList tags={l.tags} colorClass={colorClass} />
+                      </div>
                     </div>
                     <Body subtitle={l.subtitle} description={l.description} />
                     <FootLinks links={l.links} />
