@@ -1,7 +1,7 @@
-export function A({ link, des }) {
+export function A({ link, children }) {
   return (
     <a href={link} className="underline" target="_blank">
-      {des}
+      {children}
     </a>
   );
 }

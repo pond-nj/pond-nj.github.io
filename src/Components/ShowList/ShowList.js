@@ -33,6 +33,9 @@ export default function ShowList({
   //     description:
   // };
 
+  const imgClass =
+    "w-full h-40 xs:w-24 xs:h-24 sm:w-40 sm:h-40 object-cover rounded-lg";
+
   const tagsCount = {};
   list.forEach((l) => {
     if (l.tags) {
@@ -73,6 +76,7 @@ export default function ShowList({
       <ToggleDiv
         title={<Header title={title} seeMoreLink={seeMoreLink} />}
         show={show}
+        titleClass="bg-slate-200 rounded-lg"
       >
         {description ? <p>{description}</p> : null}
         <TagCheckbox
@@ -97,28 +101,27 @@ export default function ShowList({
             })
             .map((l) => {
               return (
-                <Card className="flex flex-row gap-2" bg={colorClass}>
-                  {l.fullImage ? (
-                    <ClickableImage
-                      src={l.image}
-                      fullSrc={l.fullImage}
-                      alt={l.title}
-                      className="w-20 h-20 object-cover rounded-lg"
-                      fullImgClassName="h-5/6"
-                    />
-                  ) : (
-                    <Image
-                      src={l.image}
-                      className="w-20 h-20 object-cover"
-                      alt=""
-                    />
-                  )}
+                <Card
+                  className="flex flex-col xs:flex-row gap-2"
+                  bg={colorClass}
+                >
+                  <div className="">
+                    {l.fullImage ? (
+                      <ClickableImage
+                        src={l.image}
+                        fullSrc={l.fullImage}
+                        alt={l.title}
+                        className={imgClass}
+                        fullImgClassName="h-5/6"
+                      />
+                    ) : (
+                      <Image src={l.image} className={imgClass} alt="" />
+                    )}
+                  </div>
                   <div className="flex-1 flex flex-col">
-                    <div className="flex flex-row space-x-4">
+                    <div className="flex flex-row justify-between">
                       <H3 className="inline">{l.title}</H3>
-                      <div>
-                        <TagList tags={l.tags} colorClass={colorClass} />
-                      </div>
+                      <TagList tags={l.tags} colorClass={colorClass} />
                     </div>
                     <Body subtitle={l.subtitle} description={l.description} />
                     <FootLinks links={l.links} />

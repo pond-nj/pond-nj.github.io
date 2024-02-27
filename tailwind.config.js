@@ -6,6 +6,9 @@ module.exports = {
       transitionProperty: {
         height: "max-height",
       },
+      screens: {
+        xs: "480px",
+      },
     },
   },
   plugins: [],

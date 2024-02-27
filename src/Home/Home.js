@@ -11,6 +11,7 @@ import {
   Users,
 } from "@phosphor-icons/react";
 import Header from "./Header";
+import Center from "../Components/Center";
 
 export default function Home() {
   const acheivementList = [
@@ -24,12 +25,8 @@ export default function Home() {
       links: [
         {
           url: "https://artofproblemsolving.com/community/c879638_2019_thailand_mathematical_olympiad",
-          show: (
-            <div className="flex flex-row items-center">
-              <Paperclip />
-              <span>Problem Link</span>
-            </div>
-          ),
+          icon: <Paperclip />,
+          text: "Problem Link",
         },
       ],
       description:
@@ -44,21 +41,13 @@ export default function Home() {
       links: [
         {
           url: "https://drive.google.com/file/d/1qAkoIeb16vgeD2lF08Unu7bm5JCzsEdR/view?usp=sharing",
-          show: (
-            <div className="flex flex-row items-center">
-              <Certificate />
-              <span>Dean's List</span>
-            </div>
-          ),
+          icon: <Certificate />,
+          text: "Dean's List",
         },
         {
           url: "https://www.cse.cuhk.edu.hk/academics/scholarships/",
-          show: (
-            <div className="flex flex-row items-center">
-              <Medal />
-              <span>Silver Award</span>
-            </div>
-          ),
+          icon: <Medal />,
+          text: "Award",
         },
       ],
     },
@@ -90,7 +79,7 @@ export default function Home() {
       links: [
         {
           url: "https://www.erg.cuhk.edu.hk/erg/Elite",
-          show: "Link",
+          text: "Link",
         },
       ],
     },
@@ -101,7 +90,7 @@ export default function Home() {
       links: [
         {
           url: "https://www.erg.cuhk.edu.hk/erg/AdmissionScholarshipsForNewStudents",
-          show: "Link",
+          text: "Link",
         },
       ],
     },
@@ -113,7 +102,7 @@ export default function Home() {
       links: [
         {
           url: "https://www.studyinhongkong.edu.hk/en/hong-kong-education/scholarships.php",
-          show: "Link",
+          text: "Link",
         },
       ],
     },
@@ -129,12 +118,8 @@ export default function Home() {
       links: [
         {
           url: "https://github.com/pond-nj/RabinFP-Dedup",
-          show: (
-            <div className="flex flex-row items-center">
-              <GithubLogo weight="fill" />
-              <span>Github</span>
-            </div>
-          ),
+          icon: <GithubLogo weight="fill" />,
+          text: "Github",
         },
       ],
       tags: {
@@ -152,39 +137,23 @@ export default function Home() {
       links: [
         {
           url: "https://drive.google.com/file/d/1onWqQY2bcv9LW94Fl4W4oD_YmLhtYRj7/view?usp=drive_link",
-          show: (
-            <div className="flex flex-row items-center">
-              <ProjectorScreenChart weight="fill" />
-              <span>Proposal</span>
-            </div>
-          ),
+          icon: <ProjectorScreenChart weight="fill" />,
+          text: "Proposal",
         },
         {
           url: "https://github.com/Maneemala2013/QueueApp",
-          show: (
-            <div className="flex flex-row items-center">
-              <GithubLogo weight="fill" />
-              <span>Mobile App</span>
-            </div>
-          ),
+          icon: <GithubLogo weight="fill" />,
+          text: "Mobile App",
         },
         {
           url: "https://github.com/Maneemala2013/QueueApp_Backend",
-          show: (
-            <div className="flex flex-row items-center">
-              <GithubLogo weight="fill" />
-              <span>Backend</span>
-            </div>
-          ),
+          icon: <GithubLogo weight="fill" />,
+          text: "Backend",
         },
         {
           url: "https://github.com/pond-nj/QueueApp_Backend_UI",
-          show: (
-            <div className="flex flex-row items-center">
-              <GithubLogo weight="fill" />
-              <span>Shop side Webapp</span>
-            </div>
-          ),
+          icon: <GithubLogo weight="fill" />,
+          text: "Shop side Webapp",
         },
       ],
       tags: {
@@ -211,12 +180,8 @@ export default function Home() {
       links: [
         {
           url: "https://doi.org/10.23919/DATE56975.2023.10137314",
-          show: (
-            <div className="flex flex-row items-center">
-              <Scroll weight="fill" />
-              <span>Related paper</span>
-            </div>
-          ),
+          icon: <Scroll weight="fill" />,
+          text: <span>Related paper</span>,
         },
       ],
       tags: {
@@ -227,7 +192,7 @@ export default function Home() {
     },
     {
       title: "Research Assistant on Learned Indexing for String",
-      image: "https://img.hotimg.com/IMG_6392.jpeg",
+      image: "https://i.ibb.co/gSwB6TB/IMG-6392.jpg",
       fullImage: "https://img.hotimg.com/IMG_6392.jpeg",
       subtitle:
         "Teamed up with an MPhil and an undergraduate student at CUHK to accelerate state-of-the-art string indexing algorithm.",
@@ -236,12 +201,8 @@ export default function Home() {
       links: [
         {
           url: "https://appsrv.cse.cuhk.edu.hk/~ericlo/",
-          show: (
-            <div className="flex flex-row items-center">
-              <Users weight="fill" />
-              <span>Our Supervisor</span>
-            </div>
-          ),
+          icon: <Users weight="fill" />,
+          text: "Our Supervisor",
         },
       ],
       tags: {
@@ -260,12 +221,8 @@ export default function Home() {
       links: [
         {
           url: "https://marketplace.naffiti.com/",
-          show: (
-            <div className="flex flex-row items-center">
-              <ShoppingCart weight="fill" />
-              <span>Launched Marketplace</span>
-            </div>
-          ),
+          icon: <ShoppingCart weight="fill" />,
+          text: "Launched Marketplace",
         },
       ],
       tags: {
@@ -277,8 +234,8 @@ export default function Home() {
   ];
 
   return (
-    <div className="">
-      <div className="w-screen h-screen flex flex-col p-4 space-y-4">
+    <Center>
+      <div className="flex flex-col space-y-4">
         <Header />
         {/* <AboutMe /> */}
 
@@ -319,6 +276,6 @@ export default function Home() {
           />
         </div>
       </div>
-    </div>
+    </Center>
   );
 }

@@ -23,7 +23,11 @@ const FullImage = ({ setShowFull, src, alt, className }) => {
         e.stopPropagation();
       }}
     >
-      <_Image src={src} alt={alt} className={`${className} h-5/6 z-50`} />
+      <_Image
+        src={src}
+        alt={alt}
+        className={`${className} w-5/6 h-auto xl:w-auto xl:h-5/6 z-50`}
+      />
     </div>
   );
 };

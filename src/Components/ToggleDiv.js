@@ -1,11 +1,16 @@
 import { useState } from "react";
 
-export function ToggleDiv({ children, title = "", show = false }) {
+export function ToggleDiv({
+  children,
+  title = "",
+  show = false,
+  titleClass = "",
+}) {
   const [showToggle, setShowToggle] = useState(show);
   return (
-    <div>
+    <div className="flex flex-col space-y-1">
       <div
-        className="flex flex-row cursor-pointer"
+        className={`flex flex-row cursor-pointer ${titleClass} space-x-1`}
         onClick={() => setShowToggle(!showToggle)}
       >
         <div>
@@ -23,7 +28,7 @@ export function ToggleDiv({ children, title = "", show = false }) {
       <div
         className={`${
           showToggle ? "max-h-screen" : "max-h-0"
-        } overflow-hidden linear duration-100`}
+        } overflow-auto linear duration-100`}
       >
         {children}
       </div>
