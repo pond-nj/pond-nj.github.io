@@ -1,59 +1,59 @@
 export function H1({ children, className, notBold, underline, italic }) {
   return (
-    <h1
+    <div
       className={`${notBold ? "" : "font-bold"} text-2xl ${className} ${
         underline ? "underline" : ""
       } ${italic ? "italic" : ""}`}
     >
       {children}
-    </h1>
+    </div>
   );
 }
 
 export function H2({ children, className, notBold, underline, italic }) {
   return (
-    <h2
+    <div
       className={`${notBold ? "" : "font-bold"} text-xl ${className} ${
         underline ? "underline" : ""
       } ${italic ? "italic" : ""}`}
     >
       {children}
-    </h2>
+    </div>
   );
 }
 
 export function H3({ children, className, notBold, underline, italic }) {
   return (
-    <h3
+    <div
       className={`${notBold ? "" : "font-bold"} text-lg ${className} ${
         underline ? "underline" : ""
       } ${italic ? "italic" : ""}`}
     >
       {children}
-    </h3>
+    </div>
   );
 }
 
 export function H4({ children, className, notBold, underline, italic }) {
   return (
-    <h4
+    <div
       className={`${notBold ? "" : "font-bold"} text-md ${className} ${
         underline ? "underline" : ""
       } ${italic ? "italic" : ""}`}
     >
       {children}
-    </h4>
+    </div>
   );
 }
 
 export function H5({ children, className, notBold, underline, italic }) {
   return (
-    <h5
+    <div
       className={`${notBold ? "" : "font-bold"} text-sm ${className} ${
         underline ? "underline" : ""
       } ${italic ? "italic" : ""}`}
     >
       {children}
-    </h5>
+    </div>
   );
 }

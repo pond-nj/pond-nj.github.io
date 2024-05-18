@@ -5,10 +5,10 @@ export default function Body({ subtitle, description }) {
     <div className="flex-1">
       {subtitle ? (
         <ToggleDiv title={subtitle}>
-          <p>{description}</p>
+          <p className="text-justify">{description}</p>
         </ToggleDiv>
       ) : (
-        <p>{description}</p>
+        <p className="text-justify">{description}</p>
       )}
     </div>
   );

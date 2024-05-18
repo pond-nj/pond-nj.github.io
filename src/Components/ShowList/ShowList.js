@@ -18,6 +18,7 @@ export default function ShowList({
   description,
   gridClassName = "flex flex-col space-y-1",
   seeMoreLink,
+  content,
   show = false,
 }) {
   // const list[0] = {
@@ -76,7 +77,7 @@ export default function ShowList({
       <ToggleDiv
         title={<Header title={title} seeMoreLink={seeMoreLink} />}
         show={show}
-        titleClass="bg-slate-200 rounded-lg"
+        titleClass="bg-slate-100 rounded-lg"
       >
         {description ? <p>{description}</p> : null}
         <TagCheckbox
@@ -118,11 +119,16 @@ export default function ShowList({
                       <Image src={l.image} className={imgClass} alt="" />
                     )}
                   </div>
-                  <div className="flex-1 flex flex-col">
-                    <div className="flex flex-row justify-between">
-                      <H3 className="inline">{l.title}</H3>
-                      <TagList tags={l.tags} colorClass={colorClass} />
-                    </div>
+                  <div className="flex-1 flex flex-col p-1">
+                    {l.tags ? (
+                      <div className="flex flex-row justify-between">
+                        <H3 className="inline ">{l.title}</H3>
+                        <TagList tags={l.tags} colorClass={colorClass} />
+                      </div>
+                    ) : (
+                      <H3 className="inline ">{l.title}</H3>
+                    )}
+
                     <Body subtitle={l.subtitle} description={l.description} />
                     <FootLinks links={l.links} />
                   </div>
@@ -130,6 +136,7 @@ export default function ShowList({
               );
             })}
         </div>
+        {content}
       </ToggleDiv>
     </div>
   );

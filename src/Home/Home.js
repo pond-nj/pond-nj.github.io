@@ -12,6 +12,7 @@ import {
 } from "@phosphor-icons/react";
 import Header from "./Header";
 import Center from "../Components/Center";
+import { ToggleDiv } from "../Components/ToggleDiv";
 
 export default function Home() {
   const acheivementList = [
@@ -20,8 +21,7 @@ export default function Home() {
       title:
         "Gold Medal and 2nd Runner-up: Thailand Mathematics Olympiad (TMO)",
       image: "https://i.ibb.co/kSVN9pQ/unnamed.png",
-      subtitle:
-        "Acheiving a gold medal in National Math Olympiad is no joke. I still can't believe I did it. The year was 2019, 16th TMO.",
+      subtitle: "I achieved a gold medal and 2nd runner up in 2019, 16th TMO. ",
       links: [
         {
           url: "https://artofproblemsolving.com/community/c879638_2019_thailand_mathematical_olympiad",
@@ -173,10 +173,8 @@ export default function Home() {
       title: "Research Intern at Huawei Research Centre",
       image: "https://img.hotimg.com/IMG_7763.jpeg",
       fullImage: "https://img.hotimg.com/IMG_7763.jpeg",
-      subtitle:
-        "Interned at Huawei Research Centre. Involved with pushing the Pareto frontier of Size-Area graph in adder modules.",
       description:
-        "Implemented and empirically tested a theoretical fanout-bounded logic synthesis algorithm on adder modules. Suggested a tweak of the algorithm to increase the efficiency",
+        "Interned at Huawei Research Centre. Involved with pushing the Pareto frontier of Size-Area graph in adder modules. Implemented and empirically tested a theoretical fanout-bounded logic synthesis algorithm on adder modules. Suggested a tweak of the algorithm to increase the efficiency ",
       links: [
         {
           url: "https://doi.org/10.23919/DATE56975.2023.10137314",
@@ -194,10 +192,8 @@ export default function Home() {
       title: "Research Assistant on Learned Indexing for String",
       image: "https://i.ibb.co/gSwB6TB/IMG-6392.jpg",
       fullImage: "https://img.hotimg.com/IMG_6392.jpeg",
-      subtitle:
-        "Teamed up with an MPhil and an undergraduate student at CUHK to accelerate state-of-the-art string indexing algorithm.",
       description:
-        "Analysed strings characteristic and affinity to learned indices.",
+        "Teamed up with an MPhil and an undergraduate student at CUHK to accelerate state-of-the-art string indexing algorithm. Analysed strings characteristic and affinity to learned indices.",
       links: [
         {
           url: "https://appsrv.cse.cuhk.edu.hk/~ericlo/",
@@ -215,9 +211,8 @@ export default function Home() {
       title: "Full Stack Developer at NFT Investment & Venture Limited",
       image: "https://img.hotimg.com/IMG_1945.jpeg",
       fullImage: "https://img.hotimg.com/IMG_1945.jpeg",
-      subtitle: "Assisted in developing NFT trading platform",
       description:
-        "Involved in developing and deploying NFT marketplace and NFT Art Design Tool. Tech stack heavily involved were Laravel-PHP, React, Web3.js, IPFS, and a Payment Gateway.",
+        "Assisted in developing NFT trading platform. Involved in developing and deploying NFT marketplace and NFT Art Design Tool. Tech stack heavily involved were Laravel-PHP, React, Web3.js, IPFS, and a Payment Gateway.",
       links: [
         {
           url: "https://marketplace.naffiti.com/",
@@ -233,6 +228,45 @@ export default function Home() {
     },
   ];
 
+  const educationList = [
+    {
+      title: (
+        <div className="flex flex-row justify-between font-normal">
+          <div>
+            <div className="font-bold">The Chinese University of Hong Kong</div>
+            <div>Bachelor of Science in Computer Science</div>
+          </div>
+          <div>September 2020 - July 2024</div>
+        </div>
+      ),
+    },
+    {
+      title: (
+        <div className="flex flex-row justify-between font-normal">
+          <div>
+            <div className="font-bold">Mahidol Wittayanusorn School</div>
+            <div>High School</div>
+          </div>
+          <div>May 2017 - February 2020</div>
+        </div>
+      ),
+    },
+  ];
+
+  const GraduateCourseList = [
+    {
+      title: (
+        <div className="text-lg font-normal">
+          <ul className="list-disc list-inside ">
+            <li>CSCI5010 Practical Computational Geometry Algorithms</li>
+            <li>CSCI5550 Advanced File and Storage Systems</li>
+            <li>ENGG5301 Information Theory</li>
+          </ul>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <Center>
       <div className="flex flex-col space-y-4">
@@ -243,20 +277,24 @@ export default function Home() {
           <ShowList
             title={"Work Experiences"}
             list={jobList}
-            colorClass={"bg-red-100"}
+            colorClass={"bg-slate-100 border border-slate-500"}
             show
           />
-          <ShowList
+
+          <ShowList title={"Educations"} list={educationList} show />
+
+          <ShowList title="Graduate Courses" list={GraduateCourseList} show />
+
+          {/* <ShowList
             title={"I code these!"}
             list={projectList}
-            colorClass={"bg-violet-200"}
+            colorClass={"bg-slate-100 border border-slate-500"}
             show
-          />
+          /> */}
           <ShowList
             title={"I'm proud of this!"}
             list={acheivementList}
-            colorClass={"bg-teal-100"}
-            show
+            colorClass={"bg-slate-100 border border-slate-500"}
           />
 
           <ShowList
@@ -266,13 +304,14 @@ export default function Home() {
               "Here list the scholarship I have received in my past academic journey. I am grateful for all of them. If you are still studying and would like to know more about tips and tricks on any of them, please feel free to drop me an email."
             }
             gridClassName="grid grid-cols-3 gap-1"
-            colorClass={"bg-pink-100"}
+            colorClass={"bg-slate-100 border border-slate-500"}
           />
+
           <ShowList
             title={"Hobby"}
             list={HobbyList}
-            colorClass={"bg-blue-200"}
-            show
+            gridClassName="grid grid-cols-3 gap-1"
+            colorClass={"bg-slate-100 border border-slate-500"}
           />
         </div>
       </div>

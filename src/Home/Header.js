@@ -13,7 +13,7 @@ export default function Header() {
           alt="logo"
         />
       </div>
-      <div className="flex-1 flex flex-col bg-amber-100 p-4 rounded-lg">
+      <div className="flex-1 flex flex-col bg-slate-100 p-4 rounded-lg">
         <H3>Nutdranai Jaruthikorn</H3>
         <H4 notBold italic>
           pond-nj at outlook.com
