@@ -234,9 +234,20 @@ export default function Home() {
         <div className="flex flex-row justify-between font-normal">
           <div>
             <div className="font-bold">The Chinese University of Hong Kong</div>
-            <div>Bachelor of Science in Computer Science</div>
+            <div>Ph.D. in Computer Science</div>
           </div>
-          <div>September 2020 - July 2024</div>
+          <div>2025 - 2029</div>
+        </div>
+      ),
+    },
+    {
+      title: (
+        <div className="flex flex-row justify-between font-normal">
+          <div>
+            <div className="font-bold">The Chinese University of Hong Kong</div>
+            <div>B.Sc. in Computer Science</div>
+          </div>
+          <div>2020 - 2024</div>
         </div>
       ),
     },
@@ -247,7 +258,7 @@ export default function Home() {
             <div className="font-bold">Mahidol Wittayanusorn School</div>
             <div>High School</div>
           </div>
-          <div>May 2017 - February 2020</div>
+          <div>2017 - 2020</div>
         </div>
       ),
     },
@@ -258,9 +269,11 @@ export default function Home() {
       title: (
         <div className="text-lg font-normal">
           <ul className="list-disc list-inside ">
-            <li>CSCI5010 Practical Computational Geometry Algorithms</li>
-            <li>CSCI5550 Advanced File and Storage Systems</li>
-            <li>ENGG5301 Information Theory</li>
+            <li>CSCI5690: Automated Reasoning about Software Systems</li>
+            <li>ENGG5501: Foundations of Optimization</li>
+            <li>CSCI5010: Practical Computational Geometry Algorithms</li>
+            <li>CSCI5550: Advanced File and Storage Systems</li>
+            <li>ENGG5301: Information Theory</li>
           </ul>
         </div>
       ),

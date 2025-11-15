@@ -1,6 +1,6 @@
 export default function Center({ children }) {
   return (
-    <div className="py-4 2xl:px-80 xl:px-52 lg:px-36 md:px-16 px-4">
+    <div className="py-4 2xl:px-36 xl:px28 lg:px-20 md:px-12 px-4 text-lg">
       {children}
     </div>
   );

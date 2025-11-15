@@ -106,7 +106,7 @@ export default function ShowList({
                   className="flex flex-col xs:flex-row gap-2"
                   bg={colorClass}
                 >
-                  <div className="">
+                  {/* <div className="">
                     {l.fullImage ? (
                       <ClickableImage
                         src={l.image}
@@ -118,7 +118,7 @@ export default function ShowList({
                     ) : (
                       <Image src={l.image} className={imgClass} alt="" />
                     )}
-                  </div>
+                  </div> */}
                   <div className="flex-1 flex flex-col p-1">
                     {l.tags ? (
                       <div className="flex flex-row justify-between">
