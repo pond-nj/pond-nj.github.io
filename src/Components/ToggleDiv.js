@@ -1,37 +1,42 @@
-import { useState } from "react";
+import { useState } from 'react'
 
-export function ToggleDiv({
+export function ToggleDiv ({
   children,
-  title = "",
+  title = '',
   show = false,
-  titleClass = "",
+  titleClass = '',
+  allowToggle = true
 }) {
-  const [showToggle, setShowToggle] = useState(show);
+  const [showToggle, setShowToggle] = useState(show || !allowToggle)
   return (
-    <div className="flex flex-col space-y-1">
+    <div className='flex flex-col space-y-1'>
       <div
-        className={`flex flex-row cursor-pointer ${titleClass} space-x-1`}
-        onClick={() => setShowToggle(!showToggle)}
+        className={`flex flex-row ${
+          allowToggle ? 'cursor-pointer' : ''
+        } ${titleClass} space-x-1`}
+        onClick={allowToggle ? () => setShowToggle(!showToggle) : null}
       >
-        <div>
-          <div
-            className={`${showToggle ? "rotate-90" : ""} linear duration-100`}
-          >
-            &#x25B6;
+        {allowToggle ? (
+          <div>
+            <div
+              className={`${showToggle ? 'rotate-90' : ''} linear duration-100`}
+            >
+              &#x25B6;
+            </div>
           </div>
-        </div>
-        <span className="hover:bg-opacity-50 bg-opacity-0 bg-slate-200">
+        ) : null}
+        <span className='hover:bg-opacity-50 bg-opacity-0 bg-slate-200'>
           {title}
         </span>
       </div>
 
       <div
         className={`${
-          showToggle ? "max-h-screen" : "max-h-0"
+          showToggle ? 'max-h-screen' : 'max-h-0'
         } overflow-auto linear duration-100`}
       >
         {children}
       </div>
     </div>
-  );
+  )
 }

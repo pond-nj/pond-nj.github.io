@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useState } from 'react'
 
-export function Card({
+export function Card ({
   children,
-  bg = "",
+  bg = '',
   className,
-  bgHover = "bg-slate-300",
+  bgHover = 'bg-slate-300'
 }) {
   return (
     <div
       // className={`${bg} rounded-lg p-2 ${className} hover:saturate-150`}
-      className={`${bg} rounded-lg p-2 ${className}`}
+      className={`${bg} rounded-lg p-1 py-0 ${className}`}
     >
       {children}
     </div>
-  );
+  )
 }

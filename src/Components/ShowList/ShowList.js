@@ -1,25 +1,28 @@
-import { useState } from "react";
-import { Card } from "../Card";
-import { A } from "../Element";
-import Image from "../Images/Image";
-import { H2, H3 } from "../Title";
-import { ToggleDiv } from "../ToggleDiv";
-import Header from "./Header";
-import TagCheckbox from "./TagCheckbox";
-import TagList from "./TagList";
-import Body from "./Body";
-import FootLinks from "./FootLinks";
-import ClickableImage from "../Images/ClickableImage";
+import { useState } from 'react'
+import { Card } from '../Card'
+import { A } from '../Element'
+import Image from '../Images/Image'
+import { H2, H3 } from '../Title'
+import { ToggleDiv } from '../ToggleDiv'
+import Header from './Header'
+import TagCheckbox from './TagCheckbox'
+import TagList from './TagList'
+import Body from './Body'
+import ClickableImage from '../Images/ClickableImage'
+import ShowListHead from './ShowListHead'
+import ShowListBody from './ShowListBody'
 
-export default function ShowList({
+export default function ShowList ({
   colorClass,
   title,
   list,
   description,
-  gridClassName = "flex flex-col space-y-1",
+  gridClassName = 'flex flex-col space-y-1',
   seeMoreLink,
   content,
   show = false,
+  allowToggle = true,
+  noUnderline = false
 }) {
   // const list[0] = {
   //     title:
@@ -35,75 +38,76 @@ export default function ShowList({
   // };
 
   const imgClass =
-    "w-full h-40 xs:w-24 xs:h-24 sm:w-40 sm:h-40 object-cover rounded-lg";
+    'w-full h-40 xs:w-24 xs:h-24 sm:w-40 sm:h-40 object-cover rounded-lg'
 
-  const tagsCount = {};
-  list.forEach((l) => {
+  const tagsCount = {}
+  list.forEach(l => {
     if (l.tags) {
       for (const [type, tags] of Object.entries(l.tags)) {
         if (!(type in tagsCount)) {
-          tagsCount[type] = {};
+          tagsCount[type] = {}
         }
-        tags.forEach((t) => {
+        tags.forEach(t => {
           if (t in tagsCount[type]) {
-            tagsCount[type][t] += 1;
+            tagsCount[type][t] += 1
           } else {
-            tagsCount[type][t] = 0;
+            tagsCount[type][t] = 0
           }
-        });
+        })
       }
     }
-  });
+  })
 
-  let sortTags = {};
+  let sortTags = {}
   for (const [type, tags] of Object.entries(tagsCount)) {
-    sortTags[type] = Object.keys(tags).sort((t1, t2) => tags[t1] - tags[t2]);
+    sortTags[type] = Object.keys(tags).sort((t1, t2) => tags[t1] - tags[t2])
   }
 
-  const _showTags = {};
+  const _showTags = {}
   for (const [type, tags] of Object.entries(sortTags)) {
     if (!(type in _showTags)) {
-      _showTags[type] = {};
+      _showTags[type] = {}
     }
     for (const t of tags) {
-      _showTags[type][t] = true;
+      _showTags[type][t] = true
     }
   }
-  const [showTags, setShowTags] = useState(_showTags);
-  console.log(title, show);
+  const [showTags, setShowTags] = useState(_showTags)
+  console.log(title, show)
 
   return (
     <div className={`rounded-lg bg-slate-100 p-2`}>
       <ToggleDiv
         title={<Header title={title} seeMoreLink={seeMoreLink} />}
         show={show}
-        titleClass="bg-slate-100 rounded-lg"
+        titleClass='bg-slate-100 rounded-lg'
+        allowToggle={allowToggle}
       >
         {description ? <p>{description}</p> : null}
-        <TagCheckbox
+        {/* <TagCheckbox
           tags={sortTags}
           setShowTags={setShowTags}
           showTags={showTags}
-        />
+        /> */}
         <div className={gridClassName}>
           {list
-            .filter((l) => {
+            .filter(l => {
               if (l.tags) {
                 for (const type of Object.keys(l.tags)) {
                   for (const t of l.tags[type]) {
                     if (showTags[type][t]) {
-                      return true;
+                      return true
                     }
                   }
                 }
-                return false;
+                return false
               }
-              return true;
+              return true
             })
-            .map((l) => {
+            .map(l => {
               return (
                 <Card
-                  className="flex flex-col xs:flex-row gap-2"
+                  className='flex flex-col xs:flex-row gap-2'
                   bg={colorClass}
                 >
                   {/* <div className="">
@@ -119,25 +123,27 @@ export default function ShowList({
                       <Image src={l.image} className={imgClass} alt="" />
                     )}
                   </div> */}
-                  <div className="flex-1 flex flex-col p-1">
-                    {l.tags ? (
-                      <div className="flex flex-row justify-between">
-                        <H3 className="inline ">{l.title}</H3>
-                        <TagList tags={l.tags} colorClass={colorClass} />
-                      </div>
-                    ) : (
-                      <H3 className="inline ">{l.title}</H3>
-                    )}
-
-                    <Body subtitle={l.subtitle} description={l.description} />
-                    <FootLinks links={l.links} />
+                  <div className='flex-1 flex flex-col p-1 gap-4'>
+                    <ShowListHead
+                      title={l.title}
+                      date={l.date}
+                      tags={l.tags}
+                      colorClass={colorClass}
+                      subtitle={l.subtitle}
+                      noUnderline={noUnderline}
+                    />
+                    <ShowListBody
+                      description={l.description}
+                      descriptionE={l.descriptionE}
+                      links={l.links}
+                    />
                   </div>
                 </Card>
-              );
+              )
             })}
         </div>
         {content}
       </ToggleDiv>
     </div>
-  );
+  )
 }

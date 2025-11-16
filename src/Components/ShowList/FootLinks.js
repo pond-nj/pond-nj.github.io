@@ -1,20 +1,21 @@
-import { A } from "../Element";
+import { A } from '../Element'
 
-export default function FootLinks({ links }) {
+export default function FootLinks ({ links }) {
+  if (!links) return null
   return (
-    <div className="flex flex-row space-x-1">
+    <div className='flex flex-row space-x-1'>
       {links
-        ? links.map((link) => {
+        ? links.map(link => {
             return (
               <A link={link.url} des={link.show}>
-                <div className="flex flex-row items-center">
+                <div className='flex flex-row items-center text-sm'>
                   <div>{link.icon ? link.icon : null}</div>
                   <span>{link.text}</span>
                 </div>
               </A>
-            );
+            )
           })
         : null}
     </div>
-  );
+  )
 }
